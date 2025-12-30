@@ -47,27 +47,9 @@ document.addEventListener('click', (event) => {
     }
 });
 
-// const readMoreBtn = document.getElementById("readMoreBtn");
-// const aboutText = document.getElementById("aboutText");
-// const moreText = document.querySelector(".more-text");
-
-// readMoreBtn.addEventListener("click", () => {
-//     const isCollapsed = aboutText.classList.contains("collapsed");
-
-//     if (isCollapsed) {
-//         aboutText.classList.remove("collapsed");
-//         moreText.style.display = "inline";
-//         readMoreBtn.textContent = "Read less";
-//     } else {
-//         aboutText.classList.add("collapsed");
-//         moreText.style.display = "none";
-//         readMoreBtn.textContent = "Read more";
-//     }
-// });
 
 const aboutText = document.querySelector('#aboutText');
-const readMoreBtn = document.querySelector('readMoreBtn');
-// const aboutSpan = document.querySelector('#aboutText span');
+const readMoreBtn = document.querySelector('#readMoreBtn');
 const moreText = document.querySelector('.more-text');
 
 readMoreBtn.addEventListener("click", () => {
