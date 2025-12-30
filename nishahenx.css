@@ -17,17 +17,14 @@ body {
 
 header {
     width: 100%;
-    height: 45px;
-    /* display: flex; */
-    /* display: block; */
-    /* justify-content: flex-end; */
-    align-items: center;
-    /* border: 2px solid; */
-    position: static;
-    background-color: #fee3c6a8;
-    backdrop-filter: blur(8px);
-    margin: 10px auto;
-    z-index: 5;
+    height: 50px;
+    display: block;
+    position: sticky;
+    top: 0;
+    /* border: 1px solid; */
+    z-index: 3;
+    background-color: #fee3c6fa;
+    backdrop-filter: blur(90);
 }
 
 header ul{
@@ -39,7 +36,7 @@ header ul{
     /* border: 1px solid ; */
     float: right;
     padding: 10px;
-    border-radius: 20px;
+    /* border-radius: 20px; */
     box-shadow: 0 0 2px 0px #412710;
 }
 
@@ -67,6 +64,7 @@ ul a:hover{
     outline: 1px solid #1b1007;
     /* box-shadow: 0 0 5px 1px #412710; */
     /* aspect-ratio: 3/1; */
+    z-index: 1;
 }
 
 .shop img {
@@ -75,7 +73,7 @@ ul a:hover{
 }
 .stock-prices-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 110px));
+    grid-template-columns: repeat(auto-fit, minmax(90px, 100px));
     justify-content: center;
     gap: 20px;
     /* border: 2px solid; */
@@ -84,6 +82,7 @@ ul a:hover{
 .stock-img {
     position: relative;
     /* border: 2px solid; */
+    border-top-right-radius: 20px;
     display: flex;
     justify-content: center;
     overflow: hidden;
@@ -92,7 +91,7 @@ ul a:hover{
 .stock img {
     max-width: 100px;
     max-height: 100px;
-    
+    /* border: 1px solid; */
 }
 
 .stock .name {
@@ -461,34 +460,30 @@ footer .copyright {
 
 /* @media screen and (max-width: 600px) { */
 @media (max-width: 768px) {
-    header ul {
-        position: fixed;
-        width: 0px;
-        opacity: 0;
-        border: none;
-        transition: width 1s ease-out;
-        display: block;
-        /* display: none; */
-    }
+    header {
+
+}
+
+header ul {
+    display: none;
+}
     header ul.display {
         display: block;
         width: 250px;
         opacity: 1;
         top: 0px;
+        right: 0;
         padding-top: 45px;
         /* border: 2px solid; */
-        height: 100%;
+        height: 100vh;
         background-color: #412710;
-        z-index: 1;
-        /* border-radius: 29px; */
-        
-
+        z-index: 9;
     }
     header ul.display a{
         color: white;
         display: block;
         padding: 15px;
-        margin-top: 30px;
+        margin-top: 20px;
         /* gap: 40px; */
     }
 
@@ -500,17 +495,13 @@ footer .copyright {
     }
 
     .dash-container {
+        position: fixed;
     width: 40px;
     height: 40px;
     cursor: pointer;
-    /* border: 2px solid; */
-    z-index: 1;
-    /* display: block; */
-    /* flex-direction: column; */
-    justify-items: flex-end;
-    align-items: center;
-    /* position: fixed; */
     top: 5px;
+    right: 15px;
+    z-index: 10001;
     transition: all 1s;
     float: right;
 }
