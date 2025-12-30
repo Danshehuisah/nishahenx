@@ -16,23 +16,70 @@ function revealOnScroll () {
 window.addEventListener('load', revealOnScroll);
 window.addEventListener('scroll', revealOnScroll);
 
-// function navRotate() {
-//             document.querySelector('.dash').classList.add('rotate')
-//         }
 
-// let isclick = true;
-const dashContainer = document.querySelector('.dash-container');
-dashContainer.addEventListener('click', function () {
-//   dashContainer = false;
-    // if (isclick) {
-    dashContainer.classList.toggle('rotate');
+const hamburger = document.querySelector('.hamburger');
+hamburger.addEventListener('click', function () {
+
+    hamburger.classList.toggle('rotate');
     document.querySelector('ul').classList.toggle('display');
-// 
-//   } 
-//   else { 
-    // setTimeout(() => {
-        // dashContainer.classList.remove('rotate');
-        // document.querySelector('ul').classList.remove('display')
-    // }, 100);} 
-//   isclick = !isclick
+
+});
+
+const headerUl = document.querySelector('header ul');
+const navLinks = document.querySelectorAll('.nav-link');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.forEach(nav => 
+            nav.classList.remove('active'));
+            link.classList.add('active');
+            headerUl.classList.remove('display');
+            hamburger.classList.remove('rotate');
+});
+    });
+
+
+document.addEventListener('click', (event) => {
+    const isClickInsideNav = headerUl.contains(event.target);
+    const isHamburger = hamburger.contains(event.target);
+    if (!isClickInsideNav && !isHamburger) {
+        headerUl.classList.remove('display');
+        hamburger.classList.remove('rotate');
+    }
+});
+
+// const readMoreBtn = document.getElementById("readMoreBtn");
+// const aboutText = document.getElementById("aboutText");
+// const moreText = document.querySelector(".more-text");
+
+// readMoreBtn.addEventListener("click", () => {
+//     const isCollapsed = aboutText.classList.contains("collapsed");
+
+//     if (isCollapsed) {
+//         aboutText.classList.remove("collapsed");
+//         moreText.style.display = "inline";
+//         readMoreBtn.textContent = "Read less";
+//     } else {
+//         aboutText.classList.add("collapsed");
+//         moreText.style.display = "none";
+//         readMoreBtn.textContent = "Read more";
+//     }
+// });
+
+const aboutText = document.querySelector('#aboutText');
+const readMoreBtn = document.querySelector('readMoreBtn');
+// const aboutSpan = document.querySelector('#aboutText span');
+const moreText = document.querySelector('.more-text');
+
+readMoreBtn.addEventListener("click", () => {
+    const isCollapsed = aboutText.classList.contains("collapsed");
+
+    if (isCollapsed) {
+        aboutText.classList.remove("collapsed");
+        moreText.style.display = "inline";
+        readMoreBtn.textContent = "Read less";
+    } else {
+        aboutText.classList.add("collapsed");
+        moreText.style.display = "none";
+        readMoreBtn.textContent = "Read more";
+    }
 })
