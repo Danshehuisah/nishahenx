@@ -630,7 +630,9 @@ footer .copyright {
         display: grid;
         grid-template-columns: 1fr 1fr;
         /* overflow: hidden; */
+            
     }
+
 
     .stock-prices-grid {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
